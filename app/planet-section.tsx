@@ -171,12 +171,14 @@ function ColorfulSaturn({ position }: { position: [number, number, number] }) {
     return new THREE.CanvasTexture(canvas)
   }
 
-  useFrame(() => {
+  useFrame((state) => {
     if (planetRef.current) {
-      planetRef.current.rotation.y += 0.01 // Faster rotation to be more visible
+      planetRef.current.rotation.y += 0.003 // Much slower, smoother rotation
+      planetRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.5) * 0.1
     }
     if (ringsRef.current) {
-      ringsRef.current.rotation.z += 0.005 // Rotate rings independently
+      ringsRef.current.rotation.z += 0.002 // Slower ring rotation
+      ringsRef.current.rotation.x = Math.PI / 2 + Math.sin(state.clock.elapsedTime * 0.3) * 0.05
     }
   })
 
