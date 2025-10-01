@@ -14,31 +14,44 @@ interface Skill {
 
 const skills: Skill[] = [
   // Frontend
-  { name: "React/Next.js", level: 95, icon: Globe, category: "Frontend", color: "#00ffff" },
-  { name: "TypeScript", level: 90, icon: Code, category: "Frontend", color: "#ff0080" },
+  { name: "React", level: 95, icon: Globe, category: "Frontend", color: "#00ffff" },
+  { name: "Next.js", level: 93, icon: Globe, category: "Frontend", color: "#ff0080" },
+  { name: "TypeScript", level: 92, icon: Code, category: "Frontend", color: "#8000ff" },
   { name: "JavaScript", level: 95, icon: Code, category: "Frontend", color: "#00ff41" },
-  { name: "HTML/CSS", level: 92, icon: Globe, category: "Frontend", color: "#8000ff" },
-  { name: "Tailwind CSS", level: 88, icon: Layers, category: "Frontend", color: "#00ffff" },
-  
+  { name: "Redux", level: 88, icon: Layers, category: "Frontend", color: "#8000ff" },
+  { name: "Tailwind CSS", level: 93, icon: Layers, category: "Frontend", color: "#00ffff" },
+  { name: "Material-UI", level: 85, icon: Layers, category: "Frontend", color: "#ff0080" },
+  { name: "HTML5/CSS3", level: 95, icon: Globe, category: "Frontend", color: "#00ff41" },
+
   // Backend
-  { name: "Node.js", level: 85, icon: Server, category: "Backend", color: "#00ff41" },
-  { name: "Python", level: 80, icon: Terminal, category: "Backend", color: "#ff0080" },
-  { name: "Express.js", level: 83, icon: Server, category: "Backend", color: "#00ffff" },
-  { name: "REST APIs", level: 87, icon: Zap, category: "Backend", color: "#ff4000" },
-  
-  // Database
-  { name: "MongoDB", level: 82, icon: Database, category: "Database", color: "#00ff41" },
-  { name: "PostgreSQL", level: 78, icon: Database, category: "Database", color: "#8000ff" },
-  { name: "Firebase", level: 85, icon: Database, category: "Database", color: "#ffff00" },
-  
-  // Tools & Cloud
-  { name: "AWS", level: 75, icon: Cloud, category: "Cloud", color: "#ff4000" },
-  { name: "Docker", level: 70, icon: Cpu, category: "DevOps", color: "#00ffff" },
-  { name: "Git/GitHub", level: 90, icon: Terminal, category: "Tools", color: "#ff0080" },
-  { name: "VS Code", level: 95, icon: Code, category: "Tools", color: "#8000ff" },
+  { name: "Node.js", level: 90, icon: Server, category: "Backend", color: "#00ff41" },
+  { name: "Python", level: 92, icon: Terminal, category: "Backend", color: "#00ffff" },
+  { name: "Express.js", level: 88, icon: Server, category: "Backend", color: "#8000ff" },
+  { name: "Ruby on Rails", level: 80, icon: Server, category: "Backend", color: "#ff0080" },
+  { name: "RESTful APIs", level: 93, icon: Zap, category: "Backend", color: "#ff4000" },
+
+  // AI & ML
+  { name: "RAG Systems", level: 90, icon: Cpu, category: "AI/ML", color: "#00ffff" },
+  { name: "OpenAI API", level: 88, icon: Zap, category: "AI/ML", color: "#ff0080" },
+  { name: "XGBoost", level: 85, icon: Database, category: "AI/ML", color: "#8000ff" },
+  { name: "Model Fine-tuning", level: 82, icon: Cpu, category: "AI/ML", color: "#00ff41" },
+  { name: "Risk Prediction", level: 85, icon: Database, category: "AI/ML", color: "#ffff00" },
+
+  // Database & Cloud
+  { name: "MongoDB", level: 90, icon: Database, category: "Database", color: "#00ff41" },
+  { name: "PostgreSQL", level: 88, icon: Database, category: "Database", color: "#8000ff" },
+  { name: "Supabase", level: 85, icon: Database, category: "Database", color: "#00ffff" },
+  { name: "AWS (EC2)", level: 82, icon: Cloud, category: "Cloud", color: "#ff4000" },
+
+  // Tools
+  { name: "Git/GitHub", level: 95, icon: Terminal, category: "Tools", color: "#ff0080" },
+  { name: "Docker", level: 80, icon: Cpu, category: "Tools", color: "#00ffff" },
+  { name: "Jest", level: 85, icon: Code, category: "Tools", color: "#8000ff" },
+  { name: "Figma", level: 88, icon: Layers, category: "Tools", color: "#ff0080" },
+  { name: "Nginx", level: 80, icon: Server, category: "Tools", color: "#00ff41" },
 ]
 
-const categories = ["Frontend", "Backend", "Database", "Cloud", "DevOps", "Tools"]
+const categories = ["Frontend", "Backend", "AI/ML", "Database", "Cloud", "Tools"]
 
 export function AnimatedSkills() {
   const ref = useRef(null)

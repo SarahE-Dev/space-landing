@@ -58,7 +58,7 @@ export default function ProjectCard({
       
       <div className="relative">
         {/* Project Image */}
-        <div className="relative h-48 md:h-56 overflow-hidden rounded-t-2xl bg-gradient-to-br from-[#8a2be2]/20 to-[#1e90ff]/20">
+        <div className={`relative ${featured ? 'h-80 md:h-96 lg:h-[32rem]' : 'h-48 md:h-56'} overflow-hidden rounded-t-2xl bg-gradient-to-br from-[#8a2be2]/20 to-[#1e90ff]/20`}>
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0118]/80 to-transparent z-10" />
           
           {/* Category Badge */}
@@ -87,16 +87,13 @@ export default function ProjectCard({
             </motion.div>
           )}
 
-          {/* Placeholder for project image */}
-          <div className="w-full h-full flex items-center justify-center">
-            <motion.div
-              className="text-6xl opacity-20"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            >
-              <Icon className="h-16 w-16" style={{ color }} />
-            </motion.div>
-          </div>
+          {/* Project Image */}
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            style={featured ? { objectPosition: 'center 30%' } : {}}
+          />
         </div>
 
         {/* Project Content */}

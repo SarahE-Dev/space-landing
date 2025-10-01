@@ -13,8 +13,16 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Create transporter (you'll need to configure this with your email service)
-    const transporter = nodemailer.createTransporter({
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      console.error('Contact form error: missing EMAIL_USER or EMAIL_PASS environment variables.')
+      return NextResponse.json(
+        { error: 'Email service not configured. Please try again later.' },
+        { status: 500 }
+      )
+    }
+
+    // Create transporter (configure with your email service)
+    const transporter = nodemailer.createTransport({
       // For Gmail
       service: 'gmail',
       auth: {
