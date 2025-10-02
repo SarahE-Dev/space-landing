@@ -284,14 +284,14 @@ export default function SpaceLanding() {
                         transition={{ duration: 1, ease: "easeOut" }}
                       >
                         {/* Subtle background glow - positioned behind name only */}
-                        <motion.div 
-                          className="absolute top-0 left-1/2 -translate-x-1/2 w-[75%] max-w-[680px] h-20 sm:h-28 md:h-32 lg:h-40 z-10"
+                        <motion.div
+                          className="absolute top-0 left-1/2 -translate-x-1/2 w-[85%] max-w-[800px] h-20 sm:h-28 md:h-32 lg:h-40 z-10"
                           style={{
-                            background: "radial-gradient(ellipse 70% 45%, rgba(34, 211, 238, 0.08) 0%, rgba(236, 72, 153, 0.08) 55%, rgba(168, 85, 247, 0.08) 100%)",
-                            filter: "blur(14px)"
+                            background: "radial-gradient(ellipse 75% 50%, rgba(34, 211, 238, 0.35) 0%, rgba(236, 72, 153, 0.35) 55%, rgba(168, 85, 247, 0.35) 100%)",
+                            filter: "blur(20px)"
                           }}
                           animate={{
-                            opacity: [0.3, 0.5, 0.3]
+                            opacity: [0.7, 0.9, 0.7]
                           }}
                           transition={{
                             duration: 3,
