@@ -1,8 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ExternalLink, Github, Code, Palette, Server, Smartphone } from "lucide-react"
+import { ExternalLink, Github, Code, Palette, Server, Smartphone, Play } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useState } from "react"
 
 interface ProjectCardProps {
   title: string
@@ -11,6 +12,7 @@ interface ProjectCardProps {
   technologies: string[]
   liveUrl?: string
   githubUrl?: string
+  videoUrl?: string
   category: "frontend" | "fullstack" | "mobile" | "design"
   featured?: boolean
 }
@@ -29,18 +31,20 @@ const categoryColors = {
   design: "#ff1493",
 }
 
-export default function ProjectCard({ 
-  title, 
-  description, 
-  image, 
-  technologies, 
-  liveUrl, 
-  githubUrl, 
+export default function ProjectCard({
+  title,
+  description,
+  image,
+  technologies,
+  liveUrl,
+  githubUrl,
+  videoUrl,
   category,
-  featured = false 
+  featured = false
 }: ProjectCardProps) {
   const Icon = categoryIcons[category]
   const color = categoryColors[category]
+  const [showVideoModal, setShowVideoModal] = useState(false)
 
   return (
     <motion.div
@@ -126,6 +130,22 @@ export default function ProjectCard({
 
           {/* Action Buttons */}
           <div className="flex gap-3 pt-2">
+            {videoUrl && (
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button
+                  size="sm"
+                  className="bg-gradient-to-r from-[#ff0080] to-[#8000ff] hover:opacity-90 text-white border-0"
+                  onClick={() => setShowVideoModal(true)}
+                  style={{
+                    boxShadow: "0 0 15px rgba(255, 0, 128, 0.3), 0 0 25px rgba(128, 0, 255, 0.2)"
+                  }}
+                >
+                  <Play className="h-4 w-4 mr-2" />
+                  Watch Video
+                </Button>
+              </motion.div>
+            )}
+
             {liveUrl && (
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button
@@ -141,7 +161,7 @@ export default function ProjectCard({
                 </Button>
               </motion.div>
             )}
-            
+
             {githubUrl && (
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button
@@ -162,6 +182,61 @@ export default function ProjectCard({
           </div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      {showVideoModal && videoUrl && (
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setShowVideoModal(false)}
+        >
+          <motion.div
+            className="relative w-full max-w-5xl aspect-video bg-gradient-to-b from-[#0f0f3a]/90 to-[#2a0e38]/90 rounded-2xl border-2 border-[#ff0080]/50 overflow-hidden shadow-2xl"
+            initial={{ scale: 0.8, y: 50 }}
+            animate={{ scale: 1, y: 0 }}
+            exit={{ scale: 0.8, y: 50 }}
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              boxShadow: "0 0 40px rgba(255, 0, 128, 0.4), 0 0 80px rgba(128, 0, 255, 0.3)"
+            }}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setShowVideoModal(false)}
+              className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-[#ff0080] to-[#8000ff] text-white hover:opacity-80 transition-opacity"
+              style={{
+                boxShadow: "0 0 20px rgba(255, 0, 128, 0.5)"
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+
+            {/* YouTube Embed */}
+            <iframe
+              className="w-full h-full"
+              src={videoUrl.replace("watch?v=", "embed/").split("&")[0]}
+              title={title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </motion.div>
+        </motion.div>
+      )}
     </motion.div>
   )
 }

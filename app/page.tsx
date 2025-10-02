@@ -929,6 +929,7 @@ export default function SpaceLanding() {
                   category="fullstack"
                   featured={true}
                   liveUrl="https://hrpr.banyanlabs.io"
+                  videoUrl="https://www.youtube.com/watch?v=fHWqxVuYxAU&t=1s"
                 />
               </div>
 
