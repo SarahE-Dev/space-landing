@@ -1058,19 +1058,19 @@ export default function SpaceLanding() {
                   {/* Experience items */}
                   {[
                     {
-                      year: "Aug 2025 - Present",
-                      title: "Teaching Team Assistant - Applied AI Solutions Engineering",
-                      company: "Justice Through Code",
-                      description: "Mentor 12+ mid-career professionals transitioning into AI engineering roles through intensive 40-week program focused on Python, machine learning, and production-grade system development. Deliver 9+ hours weekly of live technical instruction support across virtual classrooms, maintaining high engagement during evening sessions while managing complex breakout room collaborations. Build 1:1 mentorship framework through weekly technical check-ins, identifying learning blockers early and creating personalized development pathways for each Fellow.",
-                      technologies: ["Python", "Machine Learning", "AI Engineering", "Technical Mentorship", "Curriculum Development"],
-                      side: "right"
-                    },
-                    {
                       year: "May 2025 - Present",
                       title: "Software Engineer",
                       company: "Banyan Labs",
                       description: "Built an AI voice assistant for client workflows—hands-on coding while guiding a small cross-functional team from prototype to pilot. Implemented RAG to use the client's own knowledge, with simple intent routing and short-term memory. Shipped the assistant as a Next.js + React app with a Supabase vector database.",
                       technologies: ["Next.js", "React", "RAG", "Supabase", "AI Voice Assistant"],
+                      side: "right"
+                    },
+                    {
+                      year: "Aug 2025 - Present",
+                      title: "Teaching Team Assistant - Applied AI Solutions Engineering",
+                      company: "Justice Through Code",
+                      description: "Mentor 12+ mid-career professionals transitioning into AI engineering roles through intensive 40-week program focused on Python, machine learning, and production-grade system development. Deliver 9+ hours weekly of live technical instruction support across virtual classrooms, maintaining high engagement during evening sessions while managing complex breakout room collaborations. Build 1:1 mentorship framework through weekly technical check-ins, identifying learning blockers early and creating personalized development pathways for each Fellow.",
+                      technologies: ["Python", "Machine Learning", "AI Engineering", "Technical Mentorship", "Curriculum Development"],
                       side: "left"
                     },
                     {
