@@ -1058,12 +1058,20 @@ export default function SpaceLanding() {
                   {/* Experience items */}
                   {[
                     {
+                      year: "Aug 2025 - Present",
+                      title: "Teaching Team Assistant - Applied AI Solutions Engineering",
+                      company: "Justice Through Code",
+                      description: "Mentor 12+ mid-career professionals transitioning into AI engineering roles through intensive 40-week program focused on Python, machine learning, and production-grade system development. Deliver 9+ hours weekly of live technical instruction support across virtual classrooms, maintaining high engagement during evening sessions while managing complex breakout room collaborations. Build 1:1 mentorship framework through weekly technical check-ins, identifying learning blockers early and creating personalized development pathways for each Fellow.",
+                      technologies: ["Python", "Machine Learning", "AI Engineering", "Technical Mentorship", "Curriculum Development"],
+                      side: "right"
+                    },
+                    {
                       year: "May 2025 - Present",
                       title: "Software Engineer",
                       company: "Banyan Labs",
                       description: "Built an AI voice assistant for client workflows—hands-on coding while guiding a small cross-functional team from prototype to pilot. Implemented RAG to use the client's own knowledge, with simple intent routing and short-term memory. Shipped the assistant as a Next.js + React app with a Supabase vector database.",
                       technologies: ["Next.js", "React", "RAG", "Supabase", "AI Voice Assistant"],
-                      side: "right"
+                      side: "left"
                     },
                     {
                       year: "Sep 2024 - Mar 2025",
@@ -1071,7 +1079,7 @@ export default function SpaceLanding() {
                       company: "UpUnikSelf",
                       description: "Improved user engagement by 30% through responsive design optimizations for mobile and desktop platforms using React and Tailwind CSS. Collaborated with a team of 15 developers to build scalable React components, achieving a 95% approval rate from senior developers and stakeholders.",
                       technologies: ["React", "Tailwind CSS", "React Hooks", "Responsive Design"],
-                      side: "left"
+                      side: "right"
                     },
                     {
                       year: "Sep 2024 - Jun 2025",
@@ -1079,7 +1087,7 @@ export default function SpaceLanding() {
                       company: "Software Engineering",
                       description: "Advanced coursework in full stack development, data science fundamentals, and cutting-edge AI technologies. Specialized training in Artificial Intelligence (AI), Machine Learning Operations (MLOps), and serverless computing. Applied machine learning techniques to real-world challenges including housing risk prediction.",
                       technologies: ["AI/ML", "MLOps", "Serverless", "Full Stack", "Data Science"],
-                      side: "right"
+                      side: "left"
                     },
                     {
                       year: "Jul 2023 - May 2024",
@@ -1087,7 +1095,7 @@ export default function SpaceLanding() {
                       company: "Full Stack Software Development",
                       description: "Completed comprehensive training in full stack development with hands-on projects like Fyre Tunes and BlueZack. Gained expertise in API integration, responsive web design, and agile development practices.",
                       technologies: ["MERN Stack", "API Integration", "Agile", "Full Stack"],
-                      side: "left"
+                      side: "right"
                     }
                   ].map((item, index) => (
                     <motion.div
@@ -1125,17 +1133,19 @@ export default function SpaceLanding() {
                           whileHover={{ scale: 1.02, y: -5 }}
                           transition={{ duration: 0.2 }}
                         >
-                          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                            <h3 className="text-xl font-bold text-[#00ffff] mb-1 md:mb-0" style={{
-                              textShadow: "0 0 10px rgba(0, 255, 255, 0.3)"
-                            }}>
-                              {item.title}
-                            </h3>
-                            <span className="text-sm text-[#ff0080] font-medium" style={{
-                              textShadow: "0 0 5px rgba(255, 0, 128, 0.3)"
-                            }}>
-                              {item.year}
-                            </span>
+                          <div className="flex flex-col mb-3">
+                            <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-1">
+                              <h3 className="text-xl font-bold text-[#00ffff]" style={{
+                                textShadow: "0 0 10px rgba(0, 255, 255, 0.3)"
+                              }}>
+                                {item.title}
+                              </h3>
+                              <span className="text-sm text-[#ff0080] font-medium md:ml-4 md:whitespace-nowrap md:mt-1" style={{
+                                textShadow: "0 0 5px rgba(255, 0, 128, 0.3)"
+                              }}>
+                                {item.year}
+                              </span>
+                            </div>
                           </div>
                           
                           <h4 className="text-lg text-[#8000ff] font-semibold mb-3" style={{
