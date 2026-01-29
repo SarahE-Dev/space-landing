@@ -913,24 +913,12 @@ export default function SpaceLanding() {
                 <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#00ffff] via-[#ff0080] to-[#8000ff]" style={{
                   textShadow: "0 0 20px rgba(0, 255, 255, 0.3), 0 0 30px rgba(255, 0, 128, 0.2), 0 0 40px rgba(128, 0, 255, 0.1)"
                 }}>
-                  Featured Projects
+                  Projects
                 </h2>
                 <p className="text-lg text-[#e0e0ff]/70 max-w-2xl mx-auto">
                   A showcase of my recent work, featuring innovative solutions and creative implementations
                 </p>
               </motion.div>
-
-              <div className="mb-12">
-                <ProjectCard
-                  title="HRPR - Human Responsive Personal Representative"
-                  description="AI voice assistant showcased and used at the ACA (American Correctional Association) Conference in August 2025 in Denver. Led hands-on development while guiding a small cross-functional team from prototype to pilot. Implemented RAG to use domain-specific knowledge, with simple intent routing and short-term memory so answers stay grounded and useful. Shipped as a Next.js + React app with a PostgreSQL vector database."
-                  image="/hrpr.png"
-                  technologies={["Next.js", "React", "RAG", "PostgreSQL", "AI Voice Assistant"]}
-                  category="fullstack"
-                  featured={true}
-                  liveUrl="https://hrpr.banyanlabs.io"
-                />
-              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <ProjectCard
